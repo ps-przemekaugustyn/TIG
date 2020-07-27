@@ -20,6 +20,6 @@ function Send-UdpDatagram
             $Socket.Close() 
       }
       catch {
-            Write-host "exceptions"
+            Write-host "Exception: $_"
       }
 } 
