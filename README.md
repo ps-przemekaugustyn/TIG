@@ -57,7 +57,18 @@ influxdb_1  | ts=2020-05-04T17:31:28.476371Z lvl=info msg="Using data dir" log_i
 ``` bash
 docker-compose down -v
 ```
+## InfluxDb queries
+``` bash
+show databases
+use database_name
+show measurements
+show tag values from updatedb_shipping_estimates with key = host
+show tag values cardinality from crawler6_crawl with key=host
 
+select * from test_measurement	
+select * from crawler6_crawl order by time desc limit 10
+select * from crawler6_crawl where time>now() -1h order by time desc limit 10
+```
 ## Testing and tools
 ### Packet Sender
 [Packet Sender](https://packetsender.com) is a convenient tool for testing UDP/TCP messages. Please see an example of a measurement packet in samples. Messages should be send to udp://localhost:8092 (telegraf instance).
@@ -73,6 +84,8 @@ echo "<measurement name>,my_tag_key=my_tag_value,influxdb_database=<target datab
 [Installing Powershell on Mac](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7)
 
 ``` powershell
+// download script from repo (it is public)
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/ps-przemekaugustyn/TIG/master/powershell/UdpDatagram.ps1 -OutFile UdpDatagram.ps1
 // load script (dot sourcing)
 . ./UdpDatagram.ps1
 
