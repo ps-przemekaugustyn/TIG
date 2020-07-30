@@ -86,6 +86,7 @@ echo "<measurement name>,my_tag_key=my_tag_value,influxdb_database=<target datab
 ``` powershell
 // download script from repo (it is public)
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/ps-przemekaugustyn/TIG/master/powershell/UdpDatagram.ps1 -OutFile UdpDatagram.ps1
+
 // load script (dot sourcing)
 . ./UdpDatagram.ps1
 
