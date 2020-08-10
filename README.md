@@ -70,6 +70,9 @@ drop measurement name_of_measurement
 select * from test_measurement	
 select * from crawler6_crawl order by time desc limit 10
 select * from crawler6_crawl where time>now() -1h order by time desc limit 10
+
+// in order to change the output format of time column from default unix epoch to RFC3339
+precision rfc3339
 ```
 ## Testing and tools
 ### Packet Sender
