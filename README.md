@@ -65,6 +65,8 @@ show measurements
 show tag values from updatedb_shipping_estimates with key = host
 show tag values cardinality from crawler6_crawl with key=host
 
+drop measurement name_of_measurement
+
 select * from test_measurement	
 select * from crawler6_crawl order by time desc limit 10
 select * from crawler6_crawl where time>now() -1h order by time desc limit 10
